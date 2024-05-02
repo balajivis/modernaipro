@@ -1,0 +1,12 @@
+sh
+kaggle
+langchain
+langchain_openai 
+langchain_core
+python-dotenv
+langserve
+fastapi
+uvicorn
+gradio
+scikit-learn
+openai==0.28.1

@@ -1,0 +1,49 @@
+# MLFlow
+mlruns/
+mlartifacts/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Databases
+*.db
+*.sql
+*.sqlite
+
+# Alembic
+alembic.ini
+alembic/
+
+# Frontend
+node_modules/
+/dist
+/npm-debug.log
+/.pnp
+.pnp.js
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*.code-workspace
+
+# Environment Variables
+.env
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
