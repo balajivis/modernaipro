@@ -10,3 +10,4 @@ uvicorn
 gradio
 scikit-learn
 openai==0.28.1
+langchain-groq

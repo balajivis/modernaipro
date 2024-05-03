@@ -40,6 +40,6 @@ with mlflow.start_run() as run:
         logged_model_info.model_uri,
         eval_data,
         targets="ground_truth",
-        extra_metrics=[professionalism_metric, mlflow.metrics.latency(
-        ), mlflow.metrics.genai.answer_correctness(), mlflow.metrics.genai.answer_similarity()],
+        extra_metrics=[mlflow.metrics.genai.answer_correctness(), mlflow.metrics.genai.answer_similarity(), professionalism_metric, mlflow.metrics.latency(
+        ), mlflow.metrics.genai.answer_similarity()],
     )
