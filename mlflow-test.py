@@ -10,7 +10,6 @@ from sh import kaggle, unzip, rm
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.svm import SVC
-from sklearn.linear_model import LogisticRegression
 
 # 1. Get the data
 kaggle('datasets', 'download', '-d', 'uciml/adult-census-income')

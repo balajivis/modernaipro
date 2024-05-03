@@ -15,8 +15,8 @@ app = FastAPI(
 prompt = ChatPromptTemplate.from_template("write a tweet {topic}")
 add_routes(
     app,
-    prompt | Ollama(model="qwen"),
-    path="/tweet-qwen",
+    prompt | Ollama(model="phi3"),
+    path="/tweet-phi3",
 )
 
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
+# 1. Do a pip install of llama index: pip install langchain-groq
+# 2. In an .env file setup GROQ_API_KEY=
 import time
-from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 load_dotenv()
@@ -11,19 +12,13 @@ models = {
     "gemma-7b-it": "Gemma 7b IT"
 }
 
-# Fixed chat setup
-system = "You are a helpful assistant."
-human = "{text}"
-prompt_template = ChatPromptTemplate.from_messages(
-    [("system", system), ("human", human)])
-
 # Test each model
 for model_name, model_display_name in models.items():
-    chat = ChatGroq(temperature=0, model_name=model_name)
-    chain = prompt_template | chat
+    llm = ChatGroq(model_name=model_name)
 
     start_time = time.time()
-    response = chain.invoke({"text": "Write a haiku in 2 sentences."})
+    response = llm.invoke(
+        "Talk about your most favorite crickter in 2 sentences")
     end_time = time.time()
 
     # Calculate the elapsed time
