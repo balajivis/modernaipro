@@ -11,3 +11,4 @@ gradio
 scikit-learn
 openai==0.28.1
 langchain-groq
+pydantic-1.10.13
