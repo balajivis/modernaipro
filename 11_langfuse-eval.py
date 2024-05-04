@@ -11,9 +11,9 @@ from langchain_community.llms import Ollama
 from dotenv import load_dotenv
 load_dotenv()  # will search for .env file in local folder and load variable
 
-eval_criteria = "conciseness"
+eval_criteria = "relevance"
 infer_llm = Ollama(model="qwen")
-eval_llm = ChatGroq(model_name="llama3-70b-8192")
+eval_llm = ChatGroq(model_name="llama3-70b-8192", temperature=0)
 langfuse = Langfuse()
 
 

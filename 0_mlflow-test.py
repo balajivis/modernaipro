@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import mlflow
 from mlflow.models import infer_signature
-from sh import kaggle, unzip, rm
+# from sh import kaggle, unzip, rm
 
 # Machine learning models
 from sklearn.neighbors import KNeighborsClassifier
@@ -12,9 +12,9 @@ from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.svm import SVC
 
 # 1. Get the data
-kaggle('datasets', 'download', '-d', 'uciml/adult-census-income')
-unzip('adult-census-income.zip')
-rm('adult-census-income.zip')
+# kaggle('datasets', 'download', '-d', 'uciml/adult-census-income')
+# unzip('adult-census-income.zip')
+# rm('adult-census-income.zip')
 
 # 2. Setup the experiment
 df = pd.read_csv('adult.csv')
