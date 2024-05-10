@@ -32,4 +32,4 @@ def process_file(message, history):
 demo = gr.ChatInterface(
     fn=process_file, title="Mitra Robot Emergency Checker", multimodal=True)
 
-demo.launch(server_name="0.0.0.0")
+demo.launch(share=False, server_name="0.0.0.0")
