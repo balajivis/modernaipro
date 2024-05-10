@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  devcontainer:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/workspace
+    restart: always
+    depends_on:
+      - ollama
+    environment:
+      - OLLAMA_HOST=ollama
+    networks:
+      - mitra_bootcamp_network
+    ports:
+      - 8000:8000
+      - 7860:7860
+    command: sleep infinity
+
+  ollama:
+    image: ollama/ollama
+    ports:
+      - 11434:11434
+    volumes:
+      - ./ollama/ollama:/root/.ollama
+    container_name: ollama
+    tty: true
+    restart: always
+    networks:
+      - mitra_bootcamp_network
+
+networks:
+  mitra_bootcamp_network:
