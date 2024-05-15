@@ -37,9 +37,6 @@ node_modules/
 *.swo
 *.code-workspace
 
-# Environment Variables
-.env
-
 # OS generated files
 .DS_Store
 .DS_Store?
