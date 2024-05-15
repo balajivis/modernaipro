@@ -14,6 +14,8 @@ services:
       - OLLAMA_HOST=ollama
     networks:
       - mitra_bootcamp_network
+    env_file:
+      - .env
     ports:
       - 8000:8000
       - 7860:7860
