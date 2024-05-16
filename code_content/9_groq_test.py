@@ -2,8 +2,6 @@
 # 2. In an .env file setup GROQ_API_KEY=
 import time
 from langchain_groq import ChatGroq
-from dotenv import load_dotenv
-load_dotenv()
 
 # Model names
 models = {

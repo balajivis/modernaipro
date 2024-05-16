@@ -2,7 +2,7 @@ import pandas as pd
 import json
 
 # Load the CSV into a DataFrame
-df = pd.read_csv('data/fine_tuning_recipe.csv')
+df = pd.read_csv('/workspace/data/fine_tuning_recipe.csv')
 
 # Initialize an empty list for the JSONL strings
 jsonl_strings = []
@@ -30,6 +30,6 @@ for index, row in df.iterrows():
     jsonl_strings.append(jsonl_string)
 
 # Save the JSONL strings to a file
-with open('data/recipe_ft.jsonl', 'w', encoding='utf-8') as file:
+with open('/workspace/data/recipe_ft.jsonl', 'w', encoding='utf-8') as file:
     for jsonl_string in jsonl_strings:
         file.write(jsonl_string + "\n")

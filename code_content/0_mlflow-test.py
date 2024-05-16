@@ -17,7 +17,7 @@ from sklearn.svm import SVC
 # rm('adult-census-income.zip')
 
 # 2. Setup the experiment
-df = pd.read_csv('adult.csv')
+df = pd.read_csv('/workspace/data/adult.csv')
 encoder = LabelEncoder()
 for col in df.columns:
     if df[col].dtype.kind in 'fi':

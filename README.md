@@ -49,13 +49,14 @@ To set up your environment to run these scripts, follow these steps:
 ### Installing Models using Ollama
 
 In the VS Code container. You can use the Ollama extension to install models. We will be using the following models in this repository:
-- phi3
 - qwen
+- phi3
 - llava
+- mxbai-embed-large
 
 To download the models. Follow these steps:
 - Open terminal in the VS Code (^ + `)
-- run `ollama pull phi3`
+- run `ollama pull qwen`
 - This will take some time to download the whole model. 
 - Similarly install other models.
 

@@ -4,6 +4,7 @@ FROM continuumio/miniconda3
 COPY ./mitraaiAlpha.yml /tmp/
 COPY ./mitraaiGradio.yml /tmp/
 
+RUN apt-get update && apt-get install build-essential -y
 RUN conda env update --name base --file /tmp/mitraaiAlpha.yml
 RUN conda env create -f /tmp/mitraaiGradio.yml
 

@@ -42,4 +42,4 @@ demo = gr.ChatInterface(
     language_chat, title="Vector DB search", theme='Taithrah/Minimal')
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(server_name="0.0.0.0")

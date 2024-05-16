@@ -1,6 +1,12 @@
 # This time we are demonstrating:
 # 1. Langchain evaluation
 # 2. LangFuse scoring
+
+# Getting the host running Ollama
+import os
+ollama_host = os.environ["OLLAMA_HOST"] or "localhost"
+base_url = f"http://{ollama_host}:11434"
+
 from langfuse.decorators import langfuse_context, observe
 from langchain.evaluation import load_evaluator, Criteria
 from langfuse import Langfuse
@@ -8,11 +14,9 @@ from langfuse import Langfuse
 import gradio as gr
 from langchain_groq import ChatGroq
 from langchain_community.llms import Ollama
-from dotenv import load_dotenv
-load_dotenv()  # will search for .env file in local folder and load variable
 
 eval_criteria = "relevance"
-infer_llm = Ollama(model="qwen")
+infer_llm = Ollama(model="qwen", base_url=base_url)
 eval_llm = ChatGroq(model_name="llama3-70b-8192", temperature=0)
 langfuse = Langfuse()
 
@@ -40,4 +44,4 @@ demo = gr.ChatInterface(
     language_chat, title="LLM Evaluator Modern AI Pro", theme='Taithrah/Minimal')
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(server_name="0.0.0.0")

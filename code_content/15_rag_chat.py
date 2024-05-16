@@ -1,3 +1,8 @@
+# Getting the host running Ollama
+import os
+ollama_host = os.environ["OLLAMA_HOST"] or "localhost"
+base_url = f"http://{ollama_host}:11434"
+
 import gradio as gr
 from langchain import hub
 from langchain_community.llms import Ollama
@@ -16,7 +21,7 @@ Use three sentences maximum and keep the answer concise.
 # 1. Load our DB
 embeddings = OllamaEmbeddings(model="mxbai-embed-large")
 db = Chroma(persist_directory="./doc_vectors", embedding_function=embeddings)
-llm = Ollama(model="qwen")
+llm = Ollama(model="qwen", base_url=base_url)
 
 # 2. set up our chat
 
@@ -38,4 +43,4 @@ demo = gr.ChatInterface(
     language_chat, title="Mitra Robot RAG", theme='Taithrah/Minimal')
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(server_name="0.0.0.0")

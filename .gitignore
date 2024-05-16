@@ -45,3 +45,5 @@ node_modules/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+doc_vectors
