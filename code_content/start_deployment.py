@@ -1,7 +1,5 @@
 import requests
 import os
-from dotenv import load_dotenv
-load_dotenv()
 
 together_key = os.environ.get("TOGETHER_API_KEY")
 

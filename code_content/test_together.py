@@ -2,8 +2,6 @@ import ollama
 import requests
 import os
 import json
-from dotenv import load_dotenv
-load_dotenv()
 
 together_key = os.environ.get("TOGETHER_API_KEY")
 
