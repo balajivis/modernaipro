@@ -46,4 +46,4 @@ iface = gr.Interface(
 )
 
 # Launch the app to the world
-iface.launch(share=True)
+iface.launch(share=True, server_name="0.0.0.0")
