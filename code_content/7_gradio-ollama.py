@@ -46,4 +46,4 @@ demo = gr.ChatInterface(
     chat_interface, title="Modern AI Pro", fill_height=True, theme='Taithrah/Minimal').queue()
 
 if __name__ == "__main__":
-    demo.launch(share=True)
+    demo.launch(share=True, server_name="0.0.0.0")
