@@ -4,7 +4,7 @@ import base64
 from langchain_community.llms import Ollama
 
 buffered = BytesIO()
-pil_image = Image.open("senior.jpeg")
+pil_image = Image.open("data/senior.jpeg")
 pil_image.save(buffered, format="JPEG")
 img_str = base64.b64encode(buffered.getvalue()).decode("utf-8")
 

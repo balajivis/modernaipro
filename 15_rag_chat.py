@@ -1,22 +1,21 @@
 import gradio as gr
-from langchain import hub
 from langchain_community.llms import Ollama
-from langchain_core.runnables import RunnablePassthrough
-from langchain_core.output_parsers import StrOutputParser
-import chromadb
+from langchain_groq import ChatGroq
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.vectorstores import Chroma
 
 prompt = """
-You are an assistant for question-answering tasks for Mitra Robot customer support. 
-Use the following pieces of retrieved context to answer the question. 
-Use three sentences maximum and keep the answer concise.
+Your name is Mitra. You are an assistant for question-answering tasks for Mitra Robot customer support. 
+You need to use the following pieces of retrieved context to answer the question. 
+Use three sentences maximum and keep the answer concise. 
+Answer only robot related questions and nothing else. If they ask something like biriyani bring them back to the conversation
 """
 
 # 1. Load our DB
 embeddings = OllamaEmbeddings(model="mxbai-embed-large")
 db = Chroma(persist_directory="./doc_vectors", embedding_function=embeddings)
-llm = Ollama(model="qwen")
+# llm = Ollama(model="qwen")
+llm = ChatGroq(model_name="llama3-70b-8192")
 
 # 2. set up our chat
 
@@ -26,12 +25,13 @@ def language_chat(message, history):
     retrieved_string = "\n\n".join(doc.page_content for doc in docs)
     # print("I got these results for the message: ", message, retrieved_string)
 
-    query = prompt + "The context is: " + \
+    query = prompt + ". The context is: " + \
         retrieved_string + "The question is :" + \
         message
 
-    print(query)
-    return llm.invoke(query)
+    print(history)
+    # print(query)
+    return llm.invoke(query).content
 
 
 demo = gr.ChatInterface(

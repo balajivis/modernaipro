@@ -31,7 +31,7 @@ collection = Chroma.from_documents(
 loader = WebBaseLoader(web_path=("https://mitrarobot.com/"))
 docs = loader.load()
 text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=200, chunk_overlap=200)
+    chunk_size=200, chunk_overlap=40)
 splits = text_splitter.split_documents(docs)
 
 for s in splits:
