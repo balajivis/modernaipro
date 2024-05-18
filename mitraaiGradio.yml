@@ -1,27 +1,5 @@
 name: modernaiGradio
 dependencies:
-  - _libgcc_mutex=0.1=main
-  - _openmp_mutex=5.1=51_gnu
-  - bzip2=1.0.8=h998d150_6
-  - ca-certificates=2024.3.11=hd43f75c_0
-  - expat=2.6.2=h419075a_0
-  - ld_impl_linux-aarch64=2.38=h8131f2d_1
-  - libffi=3.4.4=h419075a_1
-  - libgcc-ng=11.2.0=h1234567_1
-  - libgomp=11.2.0=h1234567_1
-  - libstdcxx-ng=11.2.0=h1234567_1
-  - libuuid=1.41.5=h998d150_0
-  - ncurses=6.4=h419075a_0
-  - openssl=3.0.13=h2f4d8fa_1
-  - pip=24.0=py312hd43f75c_0
-  - python=3.12.3=h8edadfe_1
-  - readline=8.2=h998d150_0
-  - setuptools=69.5.1=py312hd43f75c_0
-  - sqlite=3.45.3=h998d150_0
-  - tk=8.6.14=h987d8db_0
-  - wheel=0.43.0=py312hd43f75c_0
-  - xz=5.4.6=h998d150_1
-  - zlib=1.2.13=h998d150_1
   - pip:
       - aiofiles==23.2.1
       - aiohttp==3.9.5
