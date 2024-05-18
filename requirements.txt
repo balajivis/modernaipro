@@ -1,6 +1,5 @@
 ollama
 bs4
-sh
 kaggle
 langchain
 langchain_openai 
@@ -13,3 +12,4 @@ langchain-groq
 langfuse
 chromadb
 pypdf2
+mlflow

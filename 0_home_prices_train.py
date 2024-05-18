@@ -1,15 +1,10 @@
-# from sh import kaggle, unzip, rm
 import pickle
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 import pandas as pd
 
-# kaggle('competitions', 'download', '-c','house-prices-advanced-regression-techniques')
-# unzip('house-prices-advanced-regression-techniques.zip')
-# rm('house-prices-advanced-regression-techniques.zip')
-
-df = pd.read_csv("train.csv")
+df = pd.read_csv("data/train.csv")
 df['TotalSquareFeet'] = (df['BsmtFinSF1'] + df['BsmtFinSF2'] +
                          df['1stFlrSF'] + df['2ndFlrSF'] + df['TotalBsmtSF'])
 
