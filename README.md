@@ -29,7 +29,14 @@ To set up your environment to run these scripts, follow these steps:
 2. **Install Visual Studio Code** (VS Code): 
    If you haven't already installed Visual Studio Code, you can download and install it from [here](https://code.visualstudio.com/download). VS Code is our recommended code editor for working with this repository.
 
-3. **Install Dev Container extension** in VS Code: 
+3. **Setup .env**:
+   - Copy the `.env.example` file to `.env`:
+      ```sh
+      cp .env.example .env
+      ```
+   - Edit the `.env` file and replace the placeholder values (`CHANGEME`) with your actual API keys.
+
+4. **Install Dev Container extension** in VS Code: 
    
    To streamline development within a containerized environment, we recommend installing the Dev Container extension in Visual Studio Code. Follow these steps:
    - Open Visual Studio Code.
@@ -37,11 +44,11 @@ To set up your environment to run these scripts, follow these steps:
    - Search for "Dev Container" in the Extensions Marketplace.
    - Install the "Dev Container" extension by clicking on the Install button.
 
-4. **Open Folder in VS Code**: 
+5. **Open Folder in VS Code**: 
    - After installing VS Code and the Dev Container extension, open VS Code and use it to navigate to the repository directory.
    - You can do this by either running the command `code .` in the terminal or opening VS Code first and then using the UI to open the folder `modernaipro`.
 
-5. **Open the Dev Container**:
+6. **Open the Dev Container**:
    - Click on the green icon in the bottom-left corner of Visual Studio Code (or press Cmd+Shift+P (MacOS) or Ctrl+Shift+P (Others))
    - Search for "Dev Containers: Reopen in Container" on the top search bar.
    - This action will open the project inside the Dev Container.
