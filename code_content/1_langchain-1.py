@@ -8,4 +8,4 @@ from langchain_community.llms import Ollama
 llm = Ollama(model="phi3", base_url=base_url)
 
 for chunks in llm.stream("Tell me the most interesting fact about India."):
-    print(chunks, end='')
+    print(chunks, end='\n')

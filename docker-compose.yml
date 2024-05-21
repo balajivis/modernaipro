@@ -37,10 +37,10 @@ services:
     image: ghcr.io/mlflow/mlflow:v2.12.2
     container_name: mlflow
     ports:
-      - 8001:8001
+      - 5000:5000
     environment:
       - MLFLOW_HOST=0.0.0.0
-      - MLFLOW_PORT=8080
+      - MLFLOW_PORT=5000
     networks:
       - mitra_bootcamp_network
     command: mlflow server

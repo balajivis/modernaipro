@@ -15,7 +15,7 @@ import gradio as gr
 from langchain_groq import ChatGroq
 from langchain_community.llms import Ollama
 
-eval_criteria = "relevance"
+eval_criteria = "conciseness"
 infer_llm = Ollama(model="qwen", base_url=base_url)
 eval_llm = ChatGroq(model_name="llama3-70b-8192", temperature=0)
 langfuse = Langfuse()

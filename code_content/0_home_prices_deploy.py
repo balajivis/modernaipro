@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 
 # Load the model from disk
-with open('model.pkl', 'rb') as file:
+with open('data/model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 

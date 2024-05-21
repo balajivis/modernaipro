@@ -1,20 +1,16 @@
+# NOTE: Start the server first "mlflow ui" in the command line
+
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import mlflow
 from mlflow.models import infer_signature
-# from sh import kaggle, unzip, rm
 
 # Machine learning models
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.svm import SVC
-
-# 1. Get the data
-# kaggle('datasets', 'download', '-d', 'uciml/adult-census-income')
-# unzip('adult-census-income.zip')
-# rm('adult-census-income.zip')
 
 # 2. Setup the experiment
 df = pd.read_csv('/workspace/data/adult.csv')
@@ -32,7 +28,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42)
 
 # 3. Setup MLflow
-mlflow.set_tracking_uri("http://mlflow:8080")
+mlflow.set_tracking_uri("http://mlflow:5000")
 mlflow.set_experiment("Income Classification on US Census Data")
 
 
