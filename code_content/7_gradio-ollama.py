@@ -1,3 +1,8 @@
+# Getting the host running Ollama
+import os
+ollama_host = os.environ["OLLAMA_HOST"] or "localhost"
+base_url = f"http://{ollama_host}:11434"
+
 import gradio as gr
 import requests
 import json
@@ -8,7 +13,7 @@ def chat_stream(message):
     full = ""
     try:
         response = requests.post(
-            'http://localhost:11434/api/generate',
+            f'{base_url}/api/generate',
             json={
                 'model': 'qwen',
                 'prompt': message,
@@ -46,4 +51,4 @@ demo = gr.ChatInterface(
     chat_interface, title="Modern AI Pro", fill_height=True, theme='Taithrah/Minimal').queue()
 
 if __name__ == "__main__":
-    demo.launch(share=True)
+    demo.launch(share=True, server_name="0.0.0.0")

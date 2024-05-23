@@ -1,4 +1,10 @@
 # 1. pip install pypdf2 langchain-community
+
+# Getting the host running Ollama
+import os
+ollama_host = os.environ["OLLAMA_HOST"] or "localhost"
+base_url = f"http://{ollama_host}:11434"
+
 from langchain.schema.document import Document
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -9,7 +15,7 @@ from PyPDF2 import PdfReader
 import gradio as gr
 
 # 2. Parse PDF
-reader = PdfReader('data/arso.pdf')
+reader = PdfReader('/workspace/data/arso.pdf')
 text = ""
 for i in range(0, len(reader.pages)):
     page = reader.pages[i]
@@ -23,7 +29,7 @@ all_splits = text_splitter.split_documents(documents)
 
 # 4. Setup the embeddings database
 embedding_model = "mxbai-embed-large"
-embeddings = OllamaEmbeddings(model=embedding_model)
+embeddings = OllamaEmbeddings(model=embedding_model, base_url=base_url)
 collection = Chroma.from_documents(
     documents=all_splits, embedding=embeddings, persist_directory="doc_vectors")
 
@@ -49,4 +55,4 @@ demo = gr.ChatInterface(
     language_chat, title="Vector DB search", theme='Taithrah/Minimal')
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(server_name="0.0.0.0")

@@ -1,11 +1,9 @@
 from together import Together
 import os
-from dotenv import load_dotenv
-load_dotenv()
 
 client = Together(api_key=os.environ.get("TOGETHER_API_KEY"))
 
-resp = client.files.upload(file="data/recipe_ft.jsonl")
+resp = client.files.upload(file="/workspace/data/recipe_ft.jsonl")
 
 file_id = resp.model_dump()['id']
 

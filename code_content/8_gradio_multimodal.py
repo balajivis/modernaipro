@@ -1,3 +1,8 @@
+# Getting the host running Ollama
+import os
+ollama_host = os.environ["OLLAMA_HOST"] or "localhost"
+base_url = f"http://{ollama_host}:11434"
+
 import gradio as gr
 from PIL import Image
 from io import BytesIO
@@ -19,7 +24,7 @@ def process_file(message, history):
         buffered = BytesIO()
         pil_image.save(buffered, format="JPEG")
         img_str = base64.b64encode(buffered.getvalue()).decode("utf-8")
-        llm = Ollama(model="llava").bind(images=[img_str])
+        llm = Ollama(model="llava", base_url=base_url).bind(images=[img_str])
         response = llm.invoke(message["text"])
         return f"Model response: {response}"
 
@@ -27,4 +32,4 @@ def process_file(message, history):
 demo = gr.ChatInterface(
     fn=process_file, title="Mitra Robot Emergency Checker", multimodal=True)
 
-demo.launch(share=True)
+demo.launch(share=False, server_name="0.0.0.0")

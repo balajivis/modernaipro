@@ -3,9 +3,7 @@ import openai
 import pandas as pd
 from professionalism_metric import professionalism_metric
 
-from dotenv import load_dotenv
-load_dotenv()  # will search for .env file in local folder and load variable
-mlflow.set_tracking_uri("http://127.0.0.1:8080")
+mlflow.set_tracking_uri("http://mlflow:8080")
 mlflow.set_experiment("Evaluate LLMs")
 eval_data = pd.DataFrame(
     {

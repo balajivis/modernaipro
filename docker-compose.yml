@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  devcontainer:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/workspace
+    restart: always
+    depends_on:
+      - ollama
+    environment:
+      - OLLAMA_HOST=ollama
+    networks:
+      - mitra_bootcamp_network
+    env_file:
+      - .env
+    ports:
+      - 8000:8000
+      - 7860:7860
+    command: sleep infinity
+
+  ollama:
+    image: ollama/ollama:0.1.34
+    ports:
+      - 11434:11434
+    volumes:
+      - ./ollama/ollama:/root/.ollama
+    container_name: ollama
+    tty: true
+    restart: always
+    networks:
+      - mitra_bootcamp_network
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.12.2
+    container_name: mlflow
+    ports:
+      - 5000:5000
+    environment:
+      - MLFLOW_HOST=0.0.0.0
+      - MLFLOW_PORT=5000
+    networks:
+      - mitra_bootcamp_network
+    command: mlflow server
+networks:
+  mitra_bootcamp_network:

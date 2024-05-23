@@ -13,7 +13,7 @@ from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.svm import SVC
 
 # 2. Setup the experiment
-df = pd.read_csv('data/adult.csv')
+df = pd.read_csv('/workspace/data/adult.csv')
 encoder = LabelEncoder()
 for col in df.columns:
     if df[col].dtype.kind in 'fi':
@@ -28,7 +28,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42)
 
 # 3. Setup MLflow
-mlflow.set_tracking_uri("http://127.0.0.1:5000")
+mlflow.set_tracking_uri("http://mlflow:5000")
 mlflow.set_experiment("Income Classification on US Census Data")
 
 

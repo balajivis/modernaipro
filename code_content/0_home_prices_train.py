@@ -36,5 +36,5 @@ trainer = LinearRegression()
 trainer.fit(X_train, y_train)
 print(trainer.score(X_test, y_test))
 
-with open('model.pkl', 'wb') as file:
+with open('data/model.pkl', 'wb') as file:
     pickle.dump(trainer, file)

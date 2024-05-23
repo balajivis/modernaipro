@@ -3,18 +3,22 @@
 # 2. Switching different LLMs (Ollama and Groq)
 # 3. Doing theming of Chatbot
 
+# Getting the host running Ollama
+import os
+ollama_host = os.environ["OLLAMA_HOST"] or "localhost"
+base_url = f"http://{ollama_host}:11434"
+
 import random
 import gradio as gr
 from langfuse.callback import CallbackHandler
 from langchain_groq import ChatGroq
 from langchain_community.llms import Ollama
-from dotenv import load_dotenv
-load_dotenv()  # will search for .env file in local folder and load variable
+
 langfuse_handler = CallbackHandler()  # This will enable monitoring
 
 
 def language_chat(message, history):
-    llm = Ollama(model="qwen")
+    llm = Ollama(model="qwen", base_url=base_url)
     llm2 = ChatGroq(model_name="llama3-70b-8192")
 
     if "cricket" in message or "recipe" in message:
@@ -37,4 +41,4 @@ demo = gr.ChatInterface(
     language_chat, title="LLM Switcher Modern AI Pro", theme='Taithrah/Minimal')
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(server_name="0.0.0.0")
