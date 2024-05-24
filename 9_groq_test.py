@@ -18,7 +18,7 @@ for model_name, model_display_name in models.items():
 
     start_time = time.time()
     response = llm.invoke(
-        "Talk about your most favorite crickter in 2 sentences")
+        "Talk about your most favorite EPL football club in 2 sentences")
     end_time = time.time()
 
     # Calculate the elapsed time

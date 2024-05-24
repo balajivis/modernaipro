@@ -18,9 +18,9 @@ def language_chat(message, history):
     llm2 = ChatGroq(model_name="llama3-70b-8192")
 
     if "cricket" in message or "recipe" in message:
-        choice = "Groq"
-    else:
         choice = "Ollama"
+    else:
+        choice = "Groq"
     # choice = random.choice(["Ollama", "Groq"])
     print(f"Chosen model is {choice}")
     if choice == "Ollama":

@@ -1,4 +1,7 @@
 cooking_model/
+doc_vectors/
+docker/
+
 # MLFlow
 mlruns/
 mlartifacts/

@@ -19,7 +19,7 @@ def process_file(message, history):
         buffered = BytesIO()
         pil_image.save(buffered, format="JPEG")
         img_str = base64.b64encode(buffered.getvalue()).decode("utf-8")
-        llm = Ollama(model="llava").bind(images=[img_str])
+        llm = Ollama(model="bakllava").bind(images=[img_str])
         response = llm.invoke(message["text"])
         return f"Model response: {response}"
 

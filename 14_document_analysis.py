@@ -41,8 +41,8 @@ for s in splits:
 
 
 def language_chat(message, history):
-    docs = collection.similarity_search(message, k=1)
-    return docs[0].page_content
+    docs = collection.similarity_search(message, k=2)
+    return docs[0].page_content + docs[1].page_content
 
 
 demo = gr.ChatInterface(
