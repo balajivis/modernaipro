@@ -4,6 +4,9 @@ from langchain_groq import ChatGroq
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.vectorstores import Chroma
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # Load the Document
 prompt = """
 Your name is Mitra. You are an assistant for question-answering tasks for Mitra Robot customer support. 
