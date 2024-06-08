@@ -3,6 +3,8 @@ from langchain_community.llms import Ollama
 from langchain_groq import ChatGroq
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.vectorstores import Chroma
+from dotenv import load_dotenv
+load_dotenv()
 
 from dotenv import load_dotenv
 load_dotenv()
