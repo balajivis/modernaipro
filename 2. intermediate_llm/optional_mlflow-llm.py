@@ -1,7 +1,7 @@
 import mlflow
 import openai
 import pandas as pd
-from professionalism_metric import professionalism_metric
+from intermediate_llm.professionalism_metric import professionalism_metric
 
 from dotenv import load_dotenv
 load_dotenv()  # will search for .env file in local folder and load variable

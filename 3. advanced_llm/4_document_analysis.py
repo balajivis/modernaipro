@@ -9,7 +9,7 @@ from PyPDF2 import PdfReader
 import gradio as gr
 
 # 2. Parse PDF
-reader = PdfReader('data/arso.pdf')
+reader = PdfReader('../data/arso.pdf')
 text = ""
 for i in range(0, len(reader.pages)):
     page = reader.pages[i]

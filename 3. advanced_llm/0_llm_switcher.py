@@ -14,7 +14,7 @@ langfuse_handler = CallbackHandler()  # This will enable monitoring
 
 
 def language_chat(message, history):
-    llm = Ollama(model="qwen")
+    llm = Ollama(model="gemma:2b")
     llm2 = ChatGroq(model_name="llama3-70b-8192")
 
     if "cricket" in message or "recipe" in message:

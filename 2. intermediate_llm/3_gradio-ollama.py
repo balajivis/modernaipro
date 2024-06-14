@@ -10,7 +10,7 @@ def chat_stream(message):
         response = requests.post(
             'http://localhost:11434/api/generate',
             json={
-                'model': 'qwen',
+                'model': 'gemma:2b',
                 'prompt': message,
                 'context': []
             },

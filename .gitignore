@@ -43,6 +43,9 @@ node_modules/
 # Environment Variables
 .env
 
+# Backups
+.pkl
+
 # OS generated files
 .DS_Store
 .DS_Store?

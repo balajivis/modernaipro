@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 
-df = pd.read_csv('data/Cleaned_Indian_Food_Dataset.csv')
+df = pd.read_csv('../data/Cleaned_Indian_Food_Dataset.csv')
 
 assistant_responses = []
 
@@ -29,4 +29,4 @@ final_df = pd.DataFrame({
 })
 
 # Save the new DataFrame to a CSV file
-final_df.to_csv('data/fine_tuning_recipe.csv', index=False)
+final_df.to_csv('../data/fine_tuning_recipe.csv', index=False)

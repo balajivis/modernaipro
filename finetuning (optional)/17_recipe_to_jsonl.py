@@ -2,7 +2,7 @@ import pandas as pd
 import json
 
 # Load the CSV into a DataFrame
-df = pd.read_csv('data/fine_tuning_recipe.csv')
+df = pd.read_csv('../data/fine_tuning_recipe.csv')
 
 # Initialize an empty list for the JSONL strings
 jsonl_strings = []

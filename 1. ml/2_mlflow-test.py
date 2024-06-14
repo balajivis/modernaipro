@@ -13,7 +13,7 @@ from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.svm import SVC
 
 # 2. Setup the experiment
-df = pd.read_csv('data/adult.csv')
+df = pd.read_csv('../data/adult.csv')
 encoder = LabelEncoder()
 for col in df.columns:
     if df[col].dtype.kind in 'fi':
