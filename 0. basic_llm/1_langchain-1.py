@@ -5,5 +5,5 @@
 from langchain_community.llms import Ollama
 llm = Ollama(model="gemma:2b") # try qwen2 if you have that model
 
-for chunks in llm.stream("Tell me the most interesting fact about India."):
+for chunks in llm.stream("Tell."):
     print(chunks, end='\n')

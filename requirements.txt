@@ -15,5 +15,5 @@ gradio
 langfuse
 langserve
 sse_starlette
-
+crewai
 
