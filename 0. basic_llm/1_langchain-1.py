@@ -3,7 +3,7 @@
 # conda activate modernaipro
 
 from langchain_community.llms import Ollama
-llm = Ollama(model="gemma:2b") # try qwen2 / llama3 if you have that model
+llm = Ollama(model="gemma2:2b") # try qwen2 / llama3 if you have that model
 
 
 for chunks in llm.stream("Write me a poem about Ramayan in 3 sentences"):
