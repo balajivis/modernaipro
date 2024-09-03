@@ -1,4 +1,6 @@
-# 1. pip install pypdf2 langchain-community
+import os
+os.environ['USER_AGENT'] = 'modernai_pro'
+
 from langchain.schema.document import Document
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -7,6 +9,8 @@ from langchain_community.document_loaders import WebBaseLoader
 from PyPDF2 import PdfReader
 
 import gradio as gr
+
+
 
 # 2. Parse PDF
 reader = PdfReader('../data/arso.pdf')
@@ -41,7 +45,7 @@ for s in splits:
 
 
 def language_chat(message, history):
-    docs = collection.similarity_search(message, k=2)
+    docs = collection.similarity_search(message, k=5)
     return docs[0].page_content + docs[1].page_content
 
 

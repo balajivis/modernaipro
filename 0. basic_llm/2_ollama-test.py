@@ -9,7 +9,7 @@ messages = [{
     'content': prompt,
 }]
 
-stream = ollama.chat(model='qwen2', messages=messages, stream=True)
+stream = ollama.chat(model='gemma:2b', messages=messages, stream=True)
 
 for chunk in stream:
     print(chunk['message']['content'], end='', flush=True)

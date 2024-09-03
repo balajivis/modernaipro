@@ -2,7 +2,7 @@ import gradio as gr
 from langchain_community.llms import Ollama
 from langchain_groq import ChatGroq
 from langchain_community.embeddings import OllamaEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -11,7 +11,7 @@ load_dotenv()
 prompt = """
 Your name is Mitra. You are an assistant for question-answering tasks for Mitra Robot customer support. 
 You need to use the following pieces of retrieved context to answer the question. 
-Use three sentences maximum and keep the answer concise. 
+Use three sentences maximum and keep the answer concise. Answer in a professional tone. 
 Answer only robot related questions and nothing else. If they ask something like biriyani bring them back to the conversation
 """
 
@@ -20,7 +20,7 @@ Answer only robot related questions and nothing else. If they ask something like
 # 1. Load our DB
 embeddings = OllamaEmbeddings(model="mxbai-embed-large")
 db = Chroma(persist_directory="./doc_vectors", embedding_function=embeddings)
-# llm = Ollama(model="qwen")
+# llm = Ollama(model="gemma:2b")
 llm = ChatGroq(model_name="llama3-70b-8192")
 
 # 2. set up our chat

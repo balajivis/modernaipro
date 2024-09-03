@@ -5,18 +5,18 @@ from langserve import add_routes
 
 # 1. Setup the FastAPI app
 app = FastAPI(
-    title="LangChain Server",
+    title="Modern AI Pro Server",
     version="1.0",
-    description="A simple api server using Langchain's Runnable interfaces",
+    description="For class coding",
 )
 
 
 # 2. Setup the LLM call
-prompt = ChatPromptTemplate.from_template("write a tweet {topic}")
+prompt = ChatPromptTemplate.from_template("Generate tweet on this topic: {topic}")
 add_routes(
     app,
     prompt | Ollama(model="gemma:2b"),
-    path="/tweet-qwen2",
+    path="/tweet-gemma",
 )
 
 if __name__ == "__main__":

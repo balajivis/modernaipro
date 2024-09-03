@@ -41,10 +41,11 @@ iface = gr.Interface(
         gr.Slider(1900, 2024, value=2010, label="Year built")
     ],
     outputs="text",
-    title="Moderen AI Pro: Home Price Prediction Model",
+    title="Modern AI Pro: Home Price Prediction Model",
     description="Adjust the sliders to predict the home prices."
 )
 
 # Launch the app to the world
+# https://www.gradio.app/guides/running-gradio-on-your-web-server-with-nginx
 iface.launch(share=True)
 
