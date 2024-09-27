@@ -1,5 +1,5 @@
-# 1. Do a pip install of llama index: pip install langchain-groq
-# 2. In an .env file setup GROQ_API_KEY=
+# 1. Do a pip install of langchain: pip install langchain-groq
+# 2. In an .env file setup GROQ_API_KEY=gsk-tqwgtqwt
 import time
 from langchain_groq import ChatGroq
 from dotenv import load_dotenv
@@ -8,7 +8,7 @@ load_dotenv()
 # Model names
 models = {
     "mixtral-8x7b-32768": "Mixtral 8x7b 32768",
-    "llama3-70b-8192": "Llama3 70b 8192",
+    "llama-3.1-70b-versatile": "Llama3.1 70b 8192",
     "gemma-7b-it": "Gemma 7b IT"
 }
 

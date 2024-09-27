@@ -47,5 +47,5 @@ iface = gr.Interface(
 
 # Launch the app to the world
 # https://www.gradio.app/guides/running-gradio-on-your-web-server-with-nginx
-iface.launch(share=True)
+iface.launch(share=False)
 

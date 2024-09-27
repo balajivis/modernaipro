@@ -1,3 +1,4 @@
+# Apache license
 import gradio as gr
 from langchain_community.llms import Ollama
 from langchain_groq import ChatGroq
@@ -21,7 +22,7 @@ Answer only robot related questions and nothing else. If they ask something like
 embeddings = OllamaEmbeddings(model="mxbai-embed-large")
 db = Chroma(persist_directory="./doc_vectors", embedding_function=embeddings)
 # llm = Ollama(model="gemma:2b")
-llm = ChatGroq(model_name="llama3-70b-8192")
+llm = ChatGroq(model_name="llama-3.2-11b-text-preview")
 
 # 2. set up our chat
 
@@ -37,7 +38,7 @@ def language_chat(message, history):
 
     # print(history)
     print(query)
-    return llm.invoke(query).content
+    return llm.invoke(query).content # remove .content if using ollama
 
 
 demo = gr.ChatInterface(
