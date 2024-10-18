@@ -12,8 +12,10 @@ load_dotenv()
 prompt = """
 Your name is Mitra. You are an assistant for question-answering tasks for Mitra Robot customer support. 
 You need to use the following pieces of retrieved context to answer the question. 
-Use three sentences maximum and keep the answer concise. Answer in a professional tone. 
+Use 3-5 sentences maximum and keep the answer concise. Answer in a professional tone. 
 Answer only robot related questions and nothing else. If they ask something like biriyani bring them back to the conversation
+If there is a contact detail or anything you are offering make sure it exits.
+Sales enquiries point it to sales@mitrarobot.com. 
 """
 
 # Prompt + My policy document
@@ -22,7 +24,7 @@ Answer only robot related questions and nothing else. If they ask something like
 embeddings = OllamaEmbeddings(model="mxbai-embed-large")
 db = Chroma(persist_directory="./doc_vectors", embedding_function=embeddings)
 # llm = Ollama(model="gemma:2b")
-llm = ChatGroq(model_name="llama-3.2-11b-text-preview")
+llm = ChatGroq(model_name="llama-3.2-90b-text-preview", temperature=0.5)
 
 # 2. set up our chat
 

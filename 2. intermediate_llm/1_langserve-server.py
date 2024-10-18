@@ -15,8 +15,8 @@ app = FastAPI(
 prompt = ChatPromptTemplate.from_template("Generate tweet on this topic: {topic}")
 add_routes(
     app,
-    prompt | Ollama(model="llama3.2"),
-    path="/tweet-gemma",
+    prompt | Ollama(model="gemma2:2b"),
+    path="/tweet-gen",
 )
 
 if __name__ == "__main__":
