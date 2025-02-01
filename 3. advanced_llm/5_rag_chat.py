@@ -23,7 +23,7 @@ Sales enquiries point it to sales@mitrarobot.com.
 # 1. Load our DB
 embeddings = OllamaEmbeddings(model="mxbai-embed-large")
 db = Chroma(persist_directory="./doc_vectors", embedding_function=embeddings)
-# llm = Ollama(model="gemma:2b")
+# llm = Ollama(model="llamad3.2")
 llm = ChatGroq(model_name="llama-3.2-90b-text-preview", temperature=0.5)
 
 # 2. set up our chat
