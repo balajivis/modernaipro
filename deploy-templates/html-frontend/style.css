@@ -1,0 +1,259 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #000;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.logo img {
+    width: 120px; 
+}
+
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #121212;
+    padding: 10px 20px;
+}
+
+.menu a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: none;
+}
+
+.hero {
+    background-color: #121212;
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 6em;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+}
+
+.hero p {
+    font-size: 1em;
+    color: #aaa;
+    font-weight: 400;
+    padding: 10px 30px;
+}
+
+.hero .buttons {
+    margin-top: 20px;
+}
+
+.hero .buttons a {
+    background-color: #F4BB44;
+    color: #000;
+    padding: 10px 20px;
+    
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero .buttons a.secondary {
+    background-color: #000000;
+    color: #F4BB44;
+}
+
+.features {
+    padding: 50px 20px;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+}
+
+.features h3 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.feature {
+    display: inline-block;
+    width: calc(25% - 40px); /* Adjust the width to fit four features in a row */
+    margin: 20px;
+    text-align: center;
+    vertical-align: top; /* Align features to the top */
+}
+
+.feature i {
+    font-size: 2em;
+    color: #F4BB44;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    font-size: 1.5em;
+    margin: 0;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.feature p {
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.feature-with-image {
+    display: flex;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    color: #333;
+}
+
+.feature-with-image .feature-image {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.feature-with-image .feature-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.feature-with-image .feature-content {
+    flex: 2;
+    text-align: left;
+}
+
+.feature-with-image .feature-content h3 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.testimonials {
+    padding: 50px 20px;
+    background-color: #f4f4f9;
+    text-align: center;
+    color: #333;
+}
+
+.testimonials h3 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.testimonial {
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #333;
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 10px;
+    color: #777;
+}
+
+.footer{
+    text-align: center;
+    background-color: #121212;
+    color: white;
+}
+
+/* Chat widget styles */
+#chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FFBF00;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#chat-widget {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+}
+
+#chat-header {
+    background-color: #FFBF00;
+    color: #000;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+}
+
+#chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.message {
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.message.user {
+    background-color: #DCF8C6;
+    align-self: flex-end;
+}
+
+.message.bot {
+    background-color: #ECECEC;
+    align-self: flex-start;
+}
+
+#chat-input {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+#chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-bottom-left-radius: 10px;
+}
+
+#chat-input button {
+    padding: 10px;
+    border: none;
+    background-color: #FFBF00;
+    color: #000;
+    cursor: pointer;
+    border-bottom-right-radius: 10px;
+}

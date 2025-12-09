@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- License Notice -->
+<!-- 
+Hey there! This code is free to use for all participants of the Modern AI Pro Bootcamp.
+Feel free to tweak, share, and build upon it in whatever way you see fit. 
+Just remember to have fun and spread joy.
+Happy coding and enjoy the magic of AI!
+
+From your friends at Mitra Robot!
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern AI Pro Practitioner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+</head>
+<body>
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+    </div>
+
+    <div class="menu">
+        <a href="#product">Product</a>
+        <a href="#feature-unique">Our Value</a>
+        <a href="#user-testimonials">Testimonials</a>
+    </div>
+
+    <div class="hero" id="home">
+        <h1>Practice your AI</h1>
+        <h1>like a RAG-pro</h1>
+        <p>Our curriculum is designed to equip you with the skills needed to build and deploy cutting-edge AI solutions. Whether you're a seasoned professional looking to upskill or a tech enthusiast eager to explore the world of AI, our program offers hands-on projects, expert-led sessions, and collaborative learning experiences to help you master the art and science of artificial intelligence. </p>
+        <div class="buttons">
+            <a href="#get-started">Get Started</a>
+            <a href="#contact-us" class="secondary">Contact Us</a>
+        </div>
+    </div>
+
+    <div class="features" id="product">
+        <h3>Program Highlights</h3>
+        <div class="feature">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>Comprehensive Curriculum</h3>
+            <p>Covering everything from AI fundamentals to advanced topics, our syllabus is designed to provide a thorough understanding of modern AI technologies.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-tools"></i>
+            <h3>Hands-On Projects</h3>
+            <p>Engage in real-world projects and case studies to gain practical experience and build a robust portfolio that showcases your skills.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h3>Expert Instruction</h3>
+            <p>Learn from industry experts and thought leaders who bring their extensive knowledge and experience into the classroom.</p>
+        </div>
+    </div>
+    
+
+    <div class="feature-with-image" id="feature-unique">
+        <div class="feature-image">
+            <img src="chatbot.png" alt="Feature Image" />
+        </div>
+        <div class="feature-content">
+            <h3>Innovative RAG-Based Design</h3>
+            <p>Our RAG-based chatbots combine retrieval-augmented generation techniques to provide highly accurate and context-aware responses. This innovative design ensures that the chatbot can fetch relevant information from vast data sources and generate human-like interactions, making it both functional and visually appealing.</p>
+        </div>
+    </div>
+
+    <div class="testimonials" id="user-testimonials">
+        <h3>What Our Customers Say</h3>
+        <div class="testimonial">
+            <p>"This product has changed my life for the better! I can't imagine going back to how things were before."</p>
+            <span>- John Doe</span>
+        </div>
+        <div class="testimonial">
+            <p>"Exceptional quality and outstanding customer service. Highly recommend to anyone."</p>
+            <span>- Jane Smith</span>
+        </div>
+        <div class="testimonial">
+            <p>"A truly groundbreaking product that has exceeded all my expectations."</p>
+            <span>- Robert Brown</span>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2024 Our Company. All rights reserved.</p>
+    </div>
+
+    <!-- Chat button and widget -->
+    <button id="chat-button">💬</button>
+    <div id="chat-widget">
+        <div id="chat-header">Chat with us</div>
+        <div id="chat-messages"></div>
+        <div id="chat-input">
+            <input type="text" id="message-input" placeholder="Type a message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
